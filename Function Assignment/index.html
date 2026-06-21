@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Calculator</title>
+  </head>
+  <body
+    class="flex flex-col items-center justify-center min-h-screen px-4 bg-gray-100 gap-6"
+  >
+    <h2
+      class="text-black text-4xl font-serif mb-4 sm:4xl md:5xl font-bold justify-center"
+    >
+      Calculator
+    </h2>
+    <div
+      class="w-full max-w-[220px] sm:max-w-xs md:max-w-sm lg:max-w-md bg-black rounded-[3rem] p-4 min-h-[520px] sm:min-h-[560px] md:min-h-[620px]"
+    >
+      <div class="" w-full mb-4>
+        <input
+          type="text"
+          id="output"
+          class="w-full text-white text-right text-4xl px-3 rounded-xl outline-none mt-20"
+        />
+      </div>
+
+      <div class="grid grid-cols-4 gap-3 text-center font-serif text-3xl mt-25">
+        <button
+          onclick="clearAll()"
+          class="bg-[#2D325A] text-white h-10 sm:h-12 md-h-14 w-full rounded-2xl text-sm sm:text-base md:text-lg"
+        >
+          C
+        </button>
+        <button
+          onclick="addNum('%')"
+          class="bg-[#2D325A] text-white h-10 sm:h-12 md-h-14 w-full rounded-2xl text-sm sm:text-base md:text-lg"
+        >
+          %
+        </button>
+        <button
+          onclick="inputNum()"
+          class="bg-[#2D325A] text-white h-10 sm:h-12 md-h-14 w-full rounded-2xl text-sm sm:text-base md:text-lg"
+        >
+          x
+        </button>
+        <button
+          onclick="addNum('/')"
+          class="bg-[#F59E0B] text-white h-10 sm:h-12 md-h-14 w-full rounded-2xl text-sm sm:text-base md:text-lg"
+        >
+          /
+        </button>
+        <button
+          onclick="addNum(7)"
+          class="bg-[#2D325A] text-white h-10 sm:h-12 md-h-14 w-full rounded-2xl text-sm sm:text-base md:text-lg"
+        >
+          7
+        </button>
+        <button
+          onclick="addNum(8)"
+          class="bg-[#2D325A] text-white h-10 sm:h-12 md-h-14 w-full rounded-2xl text-sm sm:text-base md:text-lg"
+        >
+          8
+        </button>
+        <button
+          onclick="addNum(9)"
+          class="bg-[#2D325A] text-white h-10 sm:h-12 md-h-14 w-full rounded-2xl text-sm sm:text-base md:text-lg"
+        >
+          9
+        </button>
+        <button
+          onclick="addNum('*')"
+          class="bg-[#F59E0B] text-white h-10 sm:h-12 md-h-14 w-full rounded-2xl text-sm sm:text-base md:text-lg"
+        >
+          *
+        </button>
+        <button
+          onclick="addNum(4)"
+          class="bg-[#2D325A] text-white h-10 sm:h-12 md-h-14 w-full rounded-2xl text-sm sm:text-base md:text-lg"
+        >
+          4
+        </button>
+        <button
+          onclick="addNum(5)"
+          class="bg-[#2D325A] text-white h-10 sm:h-12 md-h-14 w-full rounded-2xl text-sm sm:text-base md:text-lg"
+        >
+          5
+        </button>
+        <button
+          onclick="addNum(6)"
+          class="bg-[#2D325A] text-white h-10 sm:h-12 md-h-14 w-full rounded-2xl text-sm sm:text-base md:text-lg"
+        >
+          6
+        </button>
+        <button
+          onclick="addNum('-')"
+          class="bg-[#F59E0B] text-white h-10 sm:h-12 md-h-14 w-full rounded-2xl text-sm sm:text-base md:text-lg"
+        >
+          -
+        </button>
+        <button
+          onclick="addNum(1)"
+          class="bg-[#2D325A] text-white h-10 sm:h-12 md-h-14 w-full rounded-2xl text-sm sm:text-base md:text-lg"
+        >
+          1
+        </button>
+        <button
+          onclick="addNum(2)"
+          class="bg-[#2D325A] text-white h-10 sm:h-12 md-h-14 w-full rounded-2xl text-sm sm:text-base md:text-lg"
+        >
+          2
+        </button>
+        <button
+          onclick="addNum(3)"
+          class="bg-[#2D325A] text-white h-10 sm:h-12 md-h-14 w-full rounded-2xl text-sm sm:text-base md:text-lg"
+        >
+          3
+        </button>
+        <button
+          onclick="addNum('+')"
+          class="bg-[#F59E0B] text-white h-10 sm:h-12 md-h-14 w-full rounded-2xl text-sm sm:text-base md:text-lg"
+        >
+          +
+        </button>
+        <button
+          onclick="addNum(0)"
+          class="bg-[#2D325A] text-white h-10 sm:h-12 md-h-14 w-full rounded-2xl text-sm sm:text-base md:text-lg"
+        >
+          0
+        </button>
+        <button
+          onclick="addNum('00')"
+          class="bg-[#2D325A] text-white h-10 sm:h-12 md-h-14 w-full rounded-2xl text-sm sm:text-base md:text-lg"
+        >
+          00
+        </button>
+        <button
+          onclick="addNum('.')"
+          class="bg-[#2D325A] text-white h-10 sm:h-12 md-h-14 w-full rounded-2xl text-sm sm:text-base md:text-lg"
+        >
+          .
+        </button>
+        <button
+          onclick="addTogether('=')"
+          class="bg-[#F59E0B] text-white h-10 sm:h-12 md-h-14 w-full rounded-2xl text-sm sm:text-base md:text-lg"
+        >
+          =
+        </button>
+      </div>
+    </div>
+    <script src="calculator.js"></script>
+  </body>
+</html>
